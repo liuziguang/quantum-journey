@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 测试与覆盖率
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 打包
+build/
+dist/
+*.egg-info/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# 注意：env_report.txt 是 Week 1 的交付产物，故意不忽略

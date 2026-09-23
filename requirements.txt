@@ -1,0 +1,17 @@
+# quantum-journey 依赖
+# 安装：python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
+
+# ---------- Week 1 就需要（基础科学计算栈） ----------
+numpy>=1.26
+scipy
+matplotlib
+sympy
+pytest
+
+# ---------- Phase 1 后期 ~ Phase 2 才需要 ----------
+# ⚠️ 这些框架目前不支持 Python 3.14，必须用 Python 3.12 的 conda 环境（qinfo）
+# 现在不用急着装，等到 Week 14 前后再取消注释
+#
+# qiskit
+# qutip
+# pennylane
