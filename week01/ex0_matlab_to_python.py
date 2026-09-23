@@ -76,8 +76,8 @@ print("=" * 70)
 # TODO 1: 创建一个列表 a，内容为 [10, 20, 30, 40, 50]
 #   然后取"第 3 个元素"（值是 30），存到变量 third
 #   提示：MATLAB 里是 a(3)，Python 里是 a[?]
-a = None          # <-- 换成你的代码
-third = None      # <-- 换成你的代码
+a = [10,20,30,40,50]          # <-- 换成你的代码
+third =a[2]      # <-- 换成你的代码
 
 print(f"列表 a      = {a}")
 print(f"第 3 个元素 = {third}   (期望 30)")
@@ -92,12 +92,12 @@ print("=" * 70)
 
 # TODO 2: 创建 numpy 数组 v = [1, 2, 3, 4, 5]
 #   并取它的 shape，存到变量 shape_v
-v = None          # <-- 换成你的代码
-shape_v = None    # <-- 换成你的代码
+v = np.array([1,2,3,4,5])          # <-- 换成你的代码
+shape_v = v.shape    # <-- 换成你的代码
 
 # TODO 3: 用切片取 v 的前三个元素，存到 first_three
 #   提示：Python 切片是左闭右开，v[0:3] 或简写 v[:3]
-first_three = None   # <-- 换成你的代码
+first_three = v[:3]   # <-- 换成你的代码
 
 print(f"v           = {v}")
 print(f"v.shape     = {shape_v}   (期望 (5,))")
@@ -116,7 +116,8 @@ print("=" * 70)
 #             total_loop += i
 total_loop = 0
 # <-- 在这里写你的循环
-
+for i in range(1,11):
+  total_loop += i 
 # 对照：numpy 一行搞定（这就是"向量化"）
 total_vectorized = np.sum(np.arange(1, 11))
 
@@ -136,6 +137,7 @@ print("=" * 70)
 #   要求：既能在标量上工作，也能直接在 numpy 数组上工作
 #   MATLAB 写法： function y = square_plus_one(x);  y = x^2 + 1;  end
 def square_plus_one(x):
+    return x**2 + 1
     # <-- 在这里写你的代码
     pass
 
@@ -156,11 +158,11 @@ B = np.array([[5, 6],
               [7, 8]])
 
 # TODO 6a: 逐元素相乘（对应 MATLAB 的 A .* B），存到 elementwise
-elementwise = None   # <-- 换成你的代码
+elementwise = A * B   # <-- 换成你的代码
 
 # TODO 6b: 矩阵乘法（对应 MATLAB 的 A * B），存到 matmul
 #   提示：用 @ 运算符
-matmul = None        # <-- 换成你的代码
+matmul = A @ B        # <-- 换成你的代码
 
 print(f"A = \n{A}")
 print(f"B = \n{B}")
@@ -185,7 +187,7 @@ M = np.array([[1, 1j],
 
 # TODO 7: 计算 M 的共轭转置（MATLAB 的 M'），存到 M_dagger
 #   提示：先 .conj() 再 .T
-M_dagger = None   # <-- 换成你的代码
+M_dagger = M.conj().T   # <-- 换成你的代码
 
 print(f"\nM = \n{M}")
 print(f"M 的共轭转置 = \n{M_dagger}")
