@@ -49,7 +49,7 @@ show_a_message("这是示范：怎么定义、怎么调用")
 #   提示：函数体里写  return x ** 2
 def square(x):
     """返回 x 的平方"""
-    pass          # <-- 把 pass 换成你的 return 语句
+    return x**2          
 
 # 调用它，把结果存进变量
 sq3 = square(3)
@@ -75,13 +75,14 @@ introduce("小明", 25)          # name="小明", age=25
 # TODO 2: 定义函数 add(a, b)，返回 a + b
 def add(a, b):
     """返回 a + b"""
-    pass          # <-- 换成你的代码
+    return a + b          
 
 # TODO 3: 定义函数 power(base, exp)，返回 base 的 exp 次方
 #   注意参数顺序：power(2, 10) 表示 2 的 10 次方
 def power(base, exp):
     """返回 base 的 exp 次方"""
-    pass          # <-- 换成你的代码
+    y = base ** exp;
+    return y          
 
 print(f"\nadd(2, 3)     = {add(2, 3)}   (期望 5)")
 print(f"power(2, 10)  = {power(2, 10)}   (期望 1024)")
@@ -131,14 +132,14 @@ except TypeError as e:
 #   提示：内置函数 max(items) 可以直接求最大值
 def max_print(items):
     """打印最大值（错误示范）"""
-    pass          # <-- 换成 print(...)
+    print(max(items))          
 
 def max_return(items):
     """返回最大值"""
-    pass          # <-- 换成 return ...
+    return max(items)          
 
 # TODO 5: 用 max_return 的结果继续计算：最大值 + 100
-max_plus_100 = None   # <-- 换成 max_return([3, 8, 1]) + 100
+max_plus_100 = max_return([3, 8, 1]) + 100   # <-- 换成 max_return([3, 8, 1]) + 100
 
 print(f"\nmax_return([3,8,1]) 继续算 +100 = {max_plus_100}   (期望 108)")
 print("  ↑ 这就是 return 的意义：结果能被继续使用")
@@ -176,7 +177,8 @@ print(f"  不拆开的话是个元组: {pair}，取第一个用 pair[0] = {pair[
 #   提示：内置函数 min(items) 和 max(items)
 def min_max(items):
     """同时返回最小值和最大值"""
-    pass          # <-- 换成 return ...
+
+    return min(items), max(items)          # <-- 换成 return ...
 
 # 安全地拆包（如果还没实现，不会崩）
 _mm = min_max([3, 8, 1, 6])
@@ -215,7 +217,11 @@ except NameError as e:
 #   提示：for n in numbers:  if n % 2 == 0:  result += 1
 def count_evens(numbers):
     """返回 numbers 中偶数的个数"""
-    pass          # <-- 换成你的代码
+    result = 0
+    for n in numbers:   
+        if n % 2 == 0:
+            result += 1          
+    return result
 
 print(f"\n  count_evens([1,2,3,4,5,6]) = {count_evens([1, 2, 3, 4, 5, 6])}   (期望 3)")
 
@@ -242,7 +248,10 @@ print(f"  find_first_zero([5, 3, 9])    = {find_first_zero([5, 3, 9])}   (期望
 #   模仿上面的 find_first_zero 写法
 def first_negative(numbers):
     """返回第一个负数；没有则返回 None"""
-    pass          # <-- 换成你的代码
+    for i in numbers:
+        if i < 0:
+            return i
+    return None          
 
 print(f"\n  first_negative([1, 2, -3, 4]) = {first_negative([1, 2, -3, 4])}   (期望 -3)")
 print(f"  first_negative([1, 2, 3])     = {first_negative([1, 2, 3])}   (期望 None)")
@@ -307,3 +316,11 @@ elif passed >= len(checks) - 4:
 else:
     print("\n还有不少没完成。别急，这部分本来就是新东西。")
     print("哪个 TODO 卡住了，把编号和报错发我。")
+
+if passed < len(checks):
+    print()
+    print("-" * 58)
+    print("💡 改了代码但分数没变？→ 先按 Ctrl+S 保存，再重新运行。")
+    print("   编辑器里的改动只存在内存里；这个判分器读的是磁盘上的文件。")
+    print("   VS Code 里文件标签上有个 ● 圆点 = 还有未保存的改动。")
+    print("-" * 58)

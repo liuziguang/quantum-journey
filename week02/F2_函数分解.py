@@ -383,3 +383,11 @@ if passed == len(checks):
 else:
     print("\n还有 TODO 没完成（Part B 是写注释，不参与判分）。")
     print("卡住了把 TODO 编号和报错发我。")
+
+if passed < len(checks):
+    print()
+    print("-" * 58)
+    print("💡 改了代码但分数没变？→ 先按 Ctrl+S 保存，再重新运行。")
+    print("   编辑器里的改动只存在内存里；这个判分器读的是磁盘上的文件。")
+    print("   VS Code 里文件标签上有个 ● 圆点 = 还有未保存的改动。")
+    print("-" * 58)
